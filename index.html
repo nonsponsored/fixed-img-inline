@@ -12,7 +12,6 @@
 			}
 			header {
 				background-color: rebeccapurple;
-				position: relative;
 			}
 			main {
 				background-color: white;
@@ -30,13 +29,15 @@
 			
 			/* Required Styling */
 			header {
-				height: 37.5vw; /* Calculation: Image Height / (Image Width * 2) */
+				height: calc(37.5vw - 10px); /* Calculation: vw = Image Height / (Image Width * 2); 10px accounts for browser scrollbar */
 				max-height: 570px;  /* Image Height */
+				overflow: hidden;
 				position: relative;
 				z-index: 1;
 			}
 			main {
 				background-color: white;
+				display: block; /* IE 11 needs this on main tag */
 				position: relative;
 				z-index: 2;
 			}
@@ -52,6 +53,7 @@
 			}
 			img {
 				max-width: 100%;
+				width: 100%;  /* IE 11 needs this */
 			}
 			/* End Required Styling */
 		</style>
